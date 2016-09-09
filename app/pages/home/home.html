@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+      <button menuToggle>
+          <ion-icon name='menu'></ion-icon>
+      </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-menu [content]="content">
+    <ion-toolbar>
+        <ion-title>Pages</ion-title>
+    </ion-toolbar>
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="openPage(loginPage)">
+                Login
+            </button>
+            <button ion-item (click)="openPage(signupPage)">
+                Signup
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+
+
+
+
+<ion-content padding class="home">
+  <h2>Math</h2>
+
+<!-- action to open bottom menu-->
+    <button block (click)="home_button_click_bottom_options_action()">
+      Show Action Sheet
+    </button>
+  <!-- action to open alert-->
+    <button block light (click)="showAlert()">Show Basic Alert</button>
+    <!-- action to open prompt -->
+    <button block secondary outline block (click)="showPrompt()">Show Basic Prompt</button>
+    <!-- action to open confirm -->
+    <button block dark  (click)="showConfirm()">Show Basic Confirm</button>
+
+    <ion-item>
+        <ion-icon name="logo-twitter" item-left></ion-icon>
+        Followers
+        <ion-badge  item-right>260k</ion-badge>
+    </ion-item>
+
+    <button fab>
+        <ion-icon name="home" ></ion-icon>
+    </button>
+</ion-content>
+
